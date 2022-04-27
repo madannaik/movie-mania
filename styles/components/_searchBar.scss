@@ -1,0 +1,22 @@
+.searchbar {
+  width: 100%;
+  padding: 1rem 0rem;
+
+  &__input {
+    padding: 1.5rem 1rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #394049;
+    caret-color: white;
+    &::placeholder {
+      font-size: 1rem;
+      color: white;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
