@@ -1,36 +1,75 @@
+/* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import { AiFillSave, AiOutlineMore } from "react-icons/ai";
+import { FaPlayCircle } from "react-icons/fa";
+import { Button } from "../components/Button";
+import { ExtraDetailtab } from "../layout/ExtraDetailtab";
+import useSWR from "swr";
+import { getImageUrl, getSingleMovie } from "../API/const";
+import { fetcher } from "../API/SWRfetcher";
+import { useRouter } from "next/router";
+import { singleMovie } from "../interfaces/singleMovie";
+import { AwaitLoader } from "../components/AwaitLoader";
+const Details = () => {
+  const router = useRouter();
+  const {
+    query: { id },
+  } = router;
+  const { data, isValidating, mutate, error } = useSWR<singleMovie, any>(
+    getSingleMovie(parseInt(id as string)),
+    fetcher
+  );
 
-const details = () => {
-  return (
-    <div className="details">
-      <h1 className="details__heading">
-        Star Wars: Episode I - The Phantom Menace
-      </h1>
-      <div className="details__controls">
-        <button className="details__btn">Watch Now</button>
-        <button className="details__btn">Trailor</button>
-        <button className="details__btn">
-          <AiFillSave />
-        </button>
-        <button className="details__btn">
-          <AiOutlineMore />
-        </button>
+  React.useEffect(() => {
+    console.log(data);
+  }, [data]);
+  return isValidating ? (
+    <AwaitLoader />
+  ) : (
+    data && (
+      <div className="details">
+        <div className="details__background">
+          <div className="details__overlay"></div>
+
+          <img
+            className="details__background__img"
+            alt="disney"
+            src={getImageUrl(data?.poster_path as string)}
+          />
+        </div>
+        <div className="details__info">
+          <h1 className="details__heading">{data?.title}</h1>
+          <div className="details__controls">
+            <Button className="details__btn">
+              <FaPlayCircle /> Watch Now
+            </Button>
+            <Button className="details__btn">Trailor</Button>
+            <Button className="details__btn">
+              <AiFillSave />
+            </Button>
+            <Button className="details__btn">
+              <AiOutlineMore />
+            </Button>
+          </div>
+          <ul className="details__genre">
+            <li>{data?.release_date}</li>
+            <li>{data?.runtime}</li>
+            {data?.genres.map((gen, index) => {
+              return <li key={index}>{gen.name}</li>;
+            })}
+            {/* <li>Adventure</li>
+          <li>Action</li>
+          <li>Science Fiction</li> */}
+          </ul>
+          <div className="details__desc">
+            <p>{data?.overview}</p>
+          </div>
+          <ExtraDetailtab data={data as singleMovie} />
+        </div>
       </div>
-      <ul className="details__genre">
-        <li>1999-05-19</li>
-        <li>136 minutes</li>
-        <li>Adventure</li>
-        <li>Action</li>
-        <li>Science Fiction</li>
-      </ul>
-      <p className="details__info">
-        Anakin Skywalker, a young slave strong with the Force, is discovered on
-        Tatooine. Meanwhile, the evil Sith have returned, enacting their plot
-        for revenge against the Jedi.
-      </p>
-    </div>
+    )
   );
 };
 
-export default details;
+export default Details;

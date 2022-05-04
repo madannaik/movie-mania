@@ -1,0 +1,31 @@
+.tab {
+  margin: 2rem 0;
+  &__controls {
+    border-bottom: 1px solid white;
+    padding-bottom: 1rem;
+    &__items {
+      cursor: pointer;
+      &:not(:first-child) {
+        margin-left: 1rem;
+      }
+
+      &--active {
+        border-bottom: 3px solid white;
+        padding-bottom: 1rem;
+        transform: translateX(-10px) translateX(0);
+        transition-delay: 1s;
+        transition: transform 3s ease-in;
+      }
+    }
+  }
+  &__details {
+  }
+  &__1,
+  &__2,
+  &__3 {
+    display: none;
+  }
+  &--active {
+    display: block;
+  }
+}

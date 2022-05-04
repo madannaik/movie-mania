@@ -35,16 +35,36 @@ export const Carousel = () => {
   return (
     <div className="carousel">
       <div className="carousel__item" style={style}>
-        <div>Slide 1</div>
+        <div>
+          <img
+            className="carousel__item__image"
+            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2D79190EE1ECBA1C48713150D430582515E92D47E824FB15BBB53CEA30D9B3BA/scale?width=1440&aspectRatio=3.91&format=jpeg"
+          />
+        </div>
       </div>
       <div className="carousel__item" style={style}>
-        <div>Slide 2</div>
+        <div>
+          <img
+            className="carousel__item__image"
+            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2D79190EE1ECBA1C48713150D430582515E92D47E824FB15BBB53CEA30D9B3BA/scale?width=1440&aspectRatio=3.91&format=jpeg"
+          />
+        </div>
       </div>
       <div className="carousel__item" style={style}>
-        <div>Slide 3</div>
+        <div>
+          <img
+            className="carousel__item__image"
+            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2D79190EE1ECBA1C48713150D430582515E92D47E824FB15BBB53CEA30D9B3BA/scale?width=1440&aspectRatio=3.91&format=jpeg"
+          />
+        </div>
       </div>
       <div className="carousel__item" style={style}>
-        <div>Slide 4</div>
+        <div>
+          <img
+            className="carousel__item__image"
+            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2D79190EE1ECBA1C48713150D430582515E92D47E824FB15BBB53CEA30D9B3BA/scale?width=1440&aspectRatio=3.91&format=jpeg"
+          />
+        </div>
       </div>
       <div
         className="carousel__controls--left"

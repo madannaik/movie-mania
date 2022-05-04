@@ -14,14 +14,22 @@
 // Pages
 //============================================
 @import "pages/search";
+@import "pages/details";
 //============================================
 // Components
 //============================================
 @import "components/carousel";
 @import "components/searchBar";
+@import "components/button";
+@import "components/loader";
+@import "components/awaitloader";
 
 //============================================
 // Layout
 //============================================
 @import "./layout/navbar";
 @import "./layout/topmovies";
+@import "./layout/extradetailstab";
+@import "./layout/suggestion";
+@import "./layout/extras";
+@import "./layout/moviedetails";

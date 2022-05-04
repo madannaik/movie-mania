@@ -4,18 +4,30 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  padding-top: 2rem;
   &__item {
     flex-shrink: 0;
     width: 100%;
     height: 25rem;
     transition: all 0.4s;
     padding: 1rem;
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 600px) {
+      height: 18rem;
+    }
     & > div {
-      background-image: url(https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2D79190EE1ECBA1C48713150D430582515E92D47E824FB15BBB53CEA30D9B3BA/scale?width=1440&aspectRatio=3.91&format=jpeg);
       flex-shrink: 0;
+      background-size: contain;
+      background-repeat: no-repeat;
       display: flex;
       flex-grow: 1;
       justify-content: center;
+
       align-items: center;
       width: 100%;
       height: 100%;
@@ -29,6 +41,15 @@
         top: 0;
         left: 0;
         content: url(https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F33AA99395CB84E547F8D4ED40D9328D48201FEAF1EF431E4EF3C2F7509A6D09/scale?width=1440&aspectRatio=3.91);
+      }
+    }
+    @media (max-width: 600px) {
+      & > div {
+        &::after {
+          width: 10rem;
+          height: 10rem;
+          display: none;
+        }
       }
     }
   }
