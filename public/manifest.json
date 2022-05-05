@@ -1,8 +1,8 @@
 {
-  "name": "Next.JS Progressive Web App",
+  "name": "Movie Mania",
   "short_name": "Next PWA",
   "theme_color": "#ffffff",
-  "background_color": "#004740",
+  "background_color": "#fff",
   "display": "fullscreen",
   "orientation": "portrait",
   "scope": "/",
