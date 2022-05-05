@@ -13,9 +13,6 @@ const Home: NextPage = () => {
     fetcher,
     { refreshInterval: 0 }
   );
-  useEffect(() => {
-    console.log(data?.results[0].adult);
-  }, [data]);
   return (
     <div className="home">
       <Carousel />

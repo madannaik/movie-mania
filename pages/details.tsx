@@ -41,14 +41,14 @@ const Details = () => {
         <div className="details__info">
           <h1 className="details__heading">{data?.title}</h1>
           <div className="details__controls">
-            <Button className="details__btn">
+            <Button className="details__btn btn__watch">
               <FaPlayCircle /> Watch Now
             </Button>
-            <Button className="details__btn">Trailor</Button>
-            <Button className="details__btn">
+            <Button className="details__btn btn__trailor">Trailor</Button>
+            <Button className="details__btn btn__watchlist">
               <AiFillSave />
             </Button>
-            <Button className="details__btn">
+            <Button className="details__btn btn__more">
               <AiOutlineMore />
             </Button>
           </div>

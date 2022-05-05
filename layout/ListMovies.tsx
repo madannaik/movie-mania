@@ -45,6 +45,7 @@ export const ListMovies = ({
                 <div className="topmovies__name">
                   <p>{data.title}</p>
                 </div>
+                <div className="topmovie__name--mobile"></div>
               </div>
             );
           })}

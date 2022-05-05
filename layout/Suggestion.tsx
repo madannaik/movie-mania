@@ -38,6 +38,9 @@ export const Suggestion = ({ url }: { url: string }) => {
                   className="suggestion__card"
                 >
                   <img src={getImageUrl(recm?.poster_path)} />
+                  <div className="suggestion__name">
+                    <p>{recm.title}</p>
+                  </div>
                 </div>
               );
             })}
