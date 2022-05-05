@@ -8,9 +8,8 @@
     object-fit: contain;
     position: fixed;
     z-index: 0;
-    @media (max-width: 900px) {
-      // position: relative;
-      //   padding-top: 60vh;
+    @media (max-width: 450px) {
+      height: 100%;
     }
     // @media (max-width: 991px) {
 
