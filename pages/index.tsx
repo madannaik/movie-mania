@@ -17,7 +17,7 @@ const Home: NextPage = () => {
     <div className="home">
       <Carousel />
       <ListMovies
-        heading="Treding Movies"
+        heading="Trending Movies"
         data={data}
         error={error}
         loading={isValidating}

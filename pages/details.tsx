@@ -21,9 +21,6 @@ const Details = () => {
     fetcher
   );
 
-  React.useEffect(() => {
-    console.log(data);
-  }, [data]);
   return isValidating ? (
     <AwaitLoader />
   ) : (

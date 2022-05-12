@@ -32,21 +32,25 @@ export const ListMovies = ({
         {data &&
           data.results.map((data, index) => {
             return (
-              <div
-                onClick={() => onClick(data.id)}
-                key={index}
-                className="topmovies__card"
-              >
-                <img
-                  loading="eager"
-                  src={getImageUrl(data.poster_path)}
-                  alt={data.title}
-                />
-                <div className="topmovies__name">
-                  <p>{data.title}</p>
+              <>
+                <div
+                  onClick={() => onClick(data.id)}
+                  key={index}
+                  className="topmovies__card"
+                >
+                  <img
+                    loading="eager"
+                    src={getImageUrl(data.poster_path)}
+                    alt={data.title}
+                  />
+                  <div className="topmovies__name">
+                    <p>{data.title}</p>
+                  </div>
+                  <div className="topmovies__name--mobile">
+                    {data.title.substring(0, 15)}
+                  </div>
                 </div>
-                <div className="topmovie__name--mobile"></div>
-              </div>
+              </>
             );
           })}
 
